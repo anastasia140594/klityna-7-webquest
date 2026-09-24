@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Вебквест «Таємниці клітини»</title>
+<style>
+:root{--bg:#f4f8f6;--card:#fff;--ink:#17332a;--muted:#5d746b;--accent:#1f8a70;--accent2:#dff3eb;--gold:#e8b84a;--danger:#c95555}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(135deg,#eef8f3,#f9fbff);color:var(--ink)}
+main{max-width:980px;margin:auto;padding:24px}.hero{background:linear-gradient(135deg,#176b58,#2c9a78);color:white;border-radius:26px;padding:32px;box-shadow:0 12px 35px #174d3a22}
+h1{font-size:clamp(28px,5vw,48px);margin:0 0 8px}.subtitle{font-size:18px;opacity:.94}.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.stat{background:#ffffff22;border:1px solid #ffffff33;border-radius:14px;padding:10px 15px}.nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.nav button,.btn{border:0;border-radius:12px;padding:11px 15px;font-weight:700;cursor:pointer;background:var(--accent2);color:var(--ink)}.nav button.active,.btn.primary{background:var(--accent);color:white}.panel{background:var(--card);border:1px solid #dbe9e3;border-radius:20px;padding:24px;margin-top:14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.org{padding:17px;border-radius:16px;background:#f6faf8;border-left:5px solid var(--accent)}.org b{display:block;font-size:18px;margin-bottom:5px}.mission{border:1px solid #d9e7e1;border-radius:16px;padding:18px;margin:14px 0}.option{display:block;width:100%;text-align:left;margin:8px 0;padding:12px;border:1px solid #cfded8;border-radius:12px;background:white;cursor:pointer}.option:hover{border-color:var(--accent)}.option.correct{background:#dff3eb;border-color:#55a88f}.option.wrong{background:#fde9e9;border-color:#d77}.feedback{font-weight:700;margin-top:10px}.badge{display:inline-block;background:#fff4cf;border:1px solid #efd27b;border-radius:999px;padding:8px 12px;margin:5px}.progress{height:12px;background:#e6efeb;border-radius:99px;overflow:hidden;margin:10px 0}.progress span{display:block;height:100%;background:var(--accent);width:0%;transition:.3s}.small{color:var(--muted);font-size:14px}.result{text-align:center;padding:30px;background:#f5fbf8;border-radius:18px}.hide{display:none}.input{width:100%;padding:12px;border:1px solid #ccdcd5;border-radius:10px;font-size:16px}.dragbox{display:grid;grid-template-columns:1fr 1fr;gap:12px}.drop{min-height:120px;border:2px dashed #b7cec4;border-radius:14px;padding:12px}.term{padding:9px 11px;background:#e8f5f0;border-radius:10px;margin:7px 0;cursor:pointer}.term.selected{outline:2px solid var(--accent)}@media(max-width:600px){main{padding:12px}.hero,.panel{padding:18px}.dragbox{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+<h1>🔬 Таємниці клітини</h1>
+<div class="subtitle">Вебквест для 7 класу: «Будова клітини евкаріот. Органели клітини, особливості їхньої будови та функцій»</div>
+<div class="stats"><div class="stat">⭐ Бали: <b id="score">0</b></div><div class="stat">🏅 Рівень: <b id="level">Дослідник</b></div><div class="stat">🎯 Місій: <b id="done">0/7</b></div></div>
+</section>
+
+<div class="nav">
+<button class="active" data-tab="start">🚀 Старт</button><button data-tab="theory">📚 Теорія</button><button data-tab="quest">🧩 Місії</button><button data-tab="result">🏆 Нагорода</button>
+</div>
+
+<section id="start" class="panel tab">
+<h2>Місія</h2>
+<p>Ти — юний клітинний дослідник. Твоє завдання — пройти 7 місій, розкрити секрети органел і зібрати достатньо балів, щоб отримати звання.</p>
+<div class="grid">
+<div class="org"><b>🧠 Мета</b>Пояснювати будову та функції органел евкаріотичної клітини.</div>
+<div class="org"><b>🧪 Формат</b>Тести, відповідності, «правда/хиба», класифікація та коротка відповідь.</div>
+<div class="org"><b>🎁 Винагороди</b>Бали, рівні та фінальний бейдж.</div>
+</div>
+<p class="small">Порада: спочатку переглянь теоретичний блок, а потім переходь до місій.</p>
+<button class="btn primary" id="goTheory">Почати дослідження →</button>
+</section>
+
+<section id="theory" class="panel tab hide">
+<h2>📚 Теоретичний блок</h2>
+<div class="grid">
+<div class="org"><b>Клітина евкаріот</b>Має ядро, відокремлене ядерною оболонкою, та мембранні органели.</div>
+<div class="org"><b>Ядро</b>Зберігає ДНК і керує процесами життєдіяльності клітини.</div>
+<div class="org"><b>Мітохондрії</b>Забезпечують клітину енергією; мають дві мембрани та власну ДНК.</div>
+<div class="org"><b>Рибосоми</b>Немембранні структури, на яких синтезуються білки.</div>
+<div class="org"><b>ЕПС</b>Шорстка ЕПС пов’язана з рибосомами й синтезом/транспортом білків; гладка — з синтезом ліпідів та іншими процесами.</div>
+<div class="org"><b>Апарат Гольджі</b>Модифікує, сортує та пакує речовини для транспорту.</div>
+<div class="org"><b>Лізосоми</b>Містять ферменти для внутрішньоклітинного травлення та розщеплення речовин.</div>
+<div class="org"><b>Хлоропласти</b>У рослинних клітинах здійснюють фотосинтез; мають хлорофіл і дві мембрани.</div>
+<div class="org"><b>Вакуоля</b>У рослин великі вакуолі беруть участь у запасанні речовин, водному балансі та підтриманні тургору.</div>
+<div class="org"><b>Цитоскелет</b>Підтримує форму клітини та бере участь у русі й переміщенні структур.</div>
+</div>
+</section>
+
+<section id="quest" class="panel tab hide">
+<h2>🧩 Місії</h2><div class="progress"><span id="bar"></span></div><div id="missions"></div>
+</section>
+
+<section id="result" class="panel tab hide">
+<div class="result"><h2>🏆 Фінальна нагорода</h2><p>Твій результат: <strong id="finalScore">0</strong> балів із 100.</p><div id="badge"></div><p id="finalText"></p><button class="btn primary" id="restart">🔄 Пройти ще раз</button></div>
+</section>
+</main>
+<script>
+const missions=[
+{type:"mc",q:"Яка органела містить основну частину спадкової інформації евкаріотичної клітини?",opts:["Ядро","Лізосома","Апарат Гольджі","Вакуоля"],a:0,p:15,why:"Ядро містить ДНК і координує роботу клітини."},
+{type:"mc",q:"Яка органела є основним місцем клітинного дихання та утворення АТФ?",opts:["Мітохондрія","Рибосома","Хлоропласт","Лізосома"],a:0,p:15,why:"Мітохондрії забезпечують значну частину синтезу АТФ під час клітинного дихання."},
+{type:"tf",q:"Правда чи хиба: рибосоми є мембранними органелами.",opts:["Правда","Хиба"],a:1,p:10,why:"Рибосоми — немембранні структури."},
+{type:"match",q:"Обери правильну функцію органели.",items:[["Апарат Гольджі",["Сортування і пакування речовин","Синтез АТФ","Зберігання ДНК"]],["Лізосома",["Внутрішньоклітинне травлення","Фотосинтез","Синтез ДНК"]],["Хлоропласт",["Фотосинтез","Розщеплення білків у шлунку","Копіювання ДНК"]]],p:15},
+{type:"class",q:"Які структури належать до немембранних?",opts:["Рибосоми та елементи цитоскелета","Ядро та мітохондрії","ЕПС та апарат Гольджі"],a:0,p:10,why:"Рибосоми й цитоскелет не оточені мембраною."},
+{type:"short",q:"Яка органела рослинної клітини підтримує тургор і часто займає значну частину об’єму клітини?",a:["вакуоля","вакуоль","вакуоля рослинної клітини"],p:15,why:"Велика центральна вакуоля бере участь у підтриманні тургору."},
+{type:"mc",q:"Яка ознака характерна і для мітохондрій, і для хлоропластів?",opts:["Дві мембрани та власна ДНК","Тільки одна мембрана","Відсутність ДНК","Функція внутрішньоклітинного травлення"],a:0,p:20,why:"Обидві органели мають подвійні мембрани та власний генетичний матеріал."}
+];
+let score=0,done=0,answered=new Set();
+const scoreEl=document.getElementById("score"),doneEl=document.getElementById("done"),bar=document.getElementById("bar");
+function update(){scoreEl.textContent=score;doneEl.textContent=`${done}/7`;bar.style.width=(done/7*100)+"%";document.getElementById("level").textContent=score>=85?"Майстер клітини":score>=60?"Дослідник":"Новачок";}
+function finish(i,ok,why){
+ if(answered.has(i))return; answered.add(i); done++; if(ok)score+=missions[i].p;
+ const box=document.getElementById("m"+i), fb=box.querySelector(".feedback");
+ fb.textContent=(ok?"✅ Правильно! ":"❌ Ще раз подумай. ")+why; fb.style.color=ok?"#21755f":"#a33"; box.querySelectorAll("button,input,select").forEach(x=>x.disabled=true); update();
+ if(done===7){setTimeout(()=>show("result"),500);document.getElementById("finalScore").textContent=score;let b=score>=85?"🏆 Майстер клітини";else if(score>=60)b="🔬 Клітинний дослідник";else b="🌱 Початківець-дослідник";document.getElementById("badge").innerHTML=`<span class="badge">${b}</span>`;document.getElementById("finalText").textContent=score>=85?"Вітаємо! Ти впевнено орієнтуєшся в органелах і їхніх функціях.":score>=60?"Гарний результат! Повтори теорію про функції органел — і спробуй ще раз.":"Це лише перший крок. Переглянь теорію та повтори місії.";}
+}
+function render(){
+ const root=document.getElementById("missions");root.innerHTML="";
+ missions.forEach((m,i)=>{
+ let d=document.createElement("div");d.className="mission";d.id="m"+i;d.innerHTML=`<h3>Місія ${i+1} · ${m.p} балів</h3><p><b>${m.q}</b></p>`;
+ if(m.type==="mc"||m.type==="tf"||m.type==="class"){m.opts.forEach((o,j)=>{let b=document.createElement("button");b.className="option";b.textContent=o;b.addEventListener("click",()=>finish(i,j===m.a,m.why));d.appendChild(b)})}
+ if(m.type==="match"){m.items.forEach((it,k)=>{let lab=document.createElement("label");lab.innerHTML=`<span>${it[0]}</span><select class="input" style="margin:7px 0 12px"><option value="">Оберіть…</option>${it[1].map((x,j)=>`<option value="${j}">${x}</option>`).join("")}</select>`;d.appendChild(lab)});let b=document.createElement("button");b.className="btn primary";b.textContent="Перевірити";b.addEventListener("click",()=>{let s=[...d.querySelectorAll("select")].map(x=>x.value);finish(i,s.join(",")==="0,0,0",m.items.map(x=>x[0]+": правильна відповідь — "+x[1][0]).join(" · "));});d.appendChild(b)}
+ if(m.type==="short"){let inp=document.createElement("input");inp.className="input";inp.placeholder="Введи відповідь";let b=document.createElement("button");b.className="btn primary";b.textContent="Перевірити";b.style.marginTop="8px";b.addEventListener("click",()=>{let v=inp.value.trim().toLowerCase();finish(i,m.a.includes(v),m.why);});d.append(inp,b)}
+ let f=document.createElement("div");f.className="feedback";d.appendChild(f);root.appendChild(d)
+ });
+}
+function show(id){document.querySelectorAll(".tab").forEach(x=>x.classList.add("hide"));document.getElementById(id).classList.remove("hide");document.querySelectorAll(".nav button").forEach(x=>x.classList.toggle("active",x.dataset.tab===id));window.scrollTo({top:0,behavior:"smooth"})}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>show(b.dataset.tab)));
+document.getElementById("goTheory").addEventListener("click",()=>show("theory"));
+document.getElementById("restart").addEventListener("click",()=>location.reload());
+render();update();
+</script>
+</body>
+</html>
